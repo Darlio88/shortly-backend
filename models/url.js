@@ -14,6 +14,7 @@ const urlSchema = new mongoose.Schema({
         default:0
     },
     createdAt: Date,
+    createdBy: String,
 })
 
 export const Url = mongoose.model('Url', urlSchema)

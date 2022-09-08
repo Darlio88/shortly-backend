@@ -1,4 +1,4 @@
-import {User} from '../models/user.js'
+import {ShortlyUser as User} from '../models/user.js'
 import bcrypt from 'bcryptjs'
 
 
@@ -41,7 +41,9 @@ export const createUser = async(req, res) =>{
 export const updateUser = async (req, res) =>{
     try {
         const {id} = req.params
-        await User.findByIdAndUpdate(id)
+        await User.updateOne({_id:id},{...req.body})
+        res.status(200).send("user updated")
+         
     } catch (err) {
         res.status(500).send("server error"+ err.message)
     }
@@ -51,8 +53,8 @@ export const updateUser = async (req, res) =>{
 export const deleteUser = async(req, res) =>{
     try {
         const {id} = req.params
-        const deletedUser = await User.findOneAndDelete({_id:id})
-        res.status(200).send(deletedUser)
+        await User.findOneAndDelete({_id:id})
+        res.status(200).send("User succesffully deleted")
     } catch (err) {
         res.status(500).send("server error"+ err.message)   
     }

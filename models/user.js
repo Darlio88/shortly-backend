@@ -4,13 +4,13 @@ import mongoose from "mongoose";
 const userSchema = new mongoose.Schema({
     firstName: String,
     lastName:String,
-    email:String,
+    email:{type:String, required:true},
     passwordHash:String,
 });
 
 
 
-export const User = mongoose.model('User',userSchema);
+export const ShortlyUser = mongoose.model('ShortlyUser',userSchema);
 
 
 

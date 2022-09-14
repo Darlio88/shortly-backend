@@ -31,6 +31,7 @@ export const getUserUrls = async(req, res)=>{
  try {
   const {id} = req.params
   const allNotes = await Url.find({createdBy:id})
+  console.log(allNotes)
   res.status(200).send(allNotes)
  } catch (error) {
   

@@ -1,6 +1,6 @@
 import Express from "express"
 
-import {createUser, updateUser, deleteUser, loginUser} from "../controllers/userController.js"
+import {createUser, loginUser} from "../controllers/userController.js"
 
 
 const route = Express.Router()
@@ -11,8 +11,8 @@ route.post("/create-user", createUser)
 
 route.post("/login-user", loginUser)
 
-route.patch("/update-user/:id", updateUser)
+// route.patch("/update-user/:id", updateUser)
 
-route.delete("/delete-user/:id", deleteUser)
+// route.delete("/delete-user/:id", deleteUser)
 
 export default route

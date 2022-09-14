@@ -38,24 +38,24 @@ export const createUser = async(req, res) =>{
  
 }
 
-export const updateUser = async (req, res) =>{
-    try {
-        const {id} = req.params
-        await User.updateOne({_id:id},{...req.body})
-        res.status(200).send("user updated")
+// export const updateUser = async (req, res) =>{
+//     try {
+//         const {id} = req.params
+//         await User.updateOne({_id:id},{...req.body})
+//         res.status(200).send("user updated")
          
-    } catch (err) {
-        res.status(500).send("server error"+ err.message)
-    }
-}
+//     } catch (err) {
+//         res.status(500).send("server error"+ err.message)
+//     }
+// }
 
 
-export const deleteUser = async(req, res) =>{
-    try {
-        const {id} = req.params
-        await User.findOneAndDelete({_id:id})
-        res.status(200).send("User succesffully deleted")
-    } catch (err) {
-        res.status(500).send("server error"+ err.message)   
-    }
-}
+// export const deleteUser = async(req, res) =>{
+//     try {
+//         const {id} = req.params
+//         await User.findOneAndDelete({_id:id})
+//         res.status(200).send("User succesffully deleted")
+//     } catch (err) {
+//         res.status(500).send("server error"+ err.message)   
+//     }
+// }
